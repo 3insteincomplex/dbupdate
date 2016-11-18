@@ -19,7 +19,7 @@ newsdb = db['news_rec']
 
 
 now = datetime.datetime.now()
-past = now - datetime.timedelta(days = 11)
+past = now - datetime.timedelta(days = 1)
 start = past.strftime("%Y-%m-%d")
 end = now.strftime("%Y-%m-%d")
 
