@@ -17,7 +17,7 @@ for item in asx:
     hist = ysq.get_historical_prices(code, start, start)
 
     for i in hist:
-        if i != None:
+        if i is not None:
             date = datetime.datetime.strptime(i, "%Y-%m-%d")
             price = hist.get(i, {})
             adj_close =  price.get('Adj Close', {})
