@@ -8,15 +8,13 @@ now = datetime.datetime.now()
 past = now - datetime.timedelta(days = 1)
 
 start = past.strftime("%Y-%m-%d")
-end = now.strftime("%Y-%m-%d")
 client = MongoClient('mongodb://admin1:admin1@ds059306.mlab.com:59306/heroku_ph242ktw')
 db = client.get_default_database()
 histo = db['hist_rec']
-null = 0
 
 for item in asx:
     code = str(item +".AX")
-    hist = ysq.get_historical_prices(code, start, end)
+    hist = ysq.get_historical_prices(code, start, start)
 
     for i in hist:
         if i != None:
